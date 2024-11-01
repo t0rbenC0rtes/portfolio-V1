@@ -1,2 +1,2 @@
 # portfolio-V1
-First attempt at a portfolio
+First attempt at a portfolio, mobile
