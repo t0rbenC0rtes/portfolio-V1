@@ -1,0 +1,202 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 330deg;
+  inherits: false;
+}
+@font-face {
+  font-family: "Druk Wide Bold Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Druk Wide Bold Bold"), url("DrukWideBold.woff") format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header .background {
+  position: absolute;
+  background: linear-gradient(-150deg, #2e3d41 15%, #293749 70%, #473c59 94%);
+  width: 100%;
+  height: 100%;
+  transform: skewY(15deg);
+  top: -30%;
+  border-bottom: 30px solid transparent;
+  border-image: linear-gradient(90deg, rgb(229, 203, 255) 15%, rgb(71, 60, 89) 44%, rgb(41, 55, 73) 78%);
+  border-image-slice: 1;
+  z-index: 0;
+}
+.header .background span::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border-left: 0.125rem ridge rgb(229, 203, 255);
+  height: 15%;
+  background: linear-gradient(50deg, rgb(71, 60, 89) 15%, rgb(41, 55, 73) 40%, #2e3d41 100%);
+  bottom: 0;
+  right: 0;
+}
+.header .background span::before {
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 25%;
+  background: linear-gradient(50deg, rgb(71, 60, 89) 15%, rgb(41, 55, 73) 40%, #2e3d41 100%);
+  top: 25%;
+  left: 0;
+}
+
+.header .navbar .nav-left .logo-wrapper {
+  position: relative;
+  width: 3rem;
+  height: 4rem;
+}
+.header .navbar .nav-left .logo-wrapper svg {
+  width: 3rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.header .navbar .nav-left .logo-wrapper::after,
+.header .navbar .nav-left .logo-wrapper::before {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 88%;
+  background-image: conic-gradient(from var(--angle), rgb(229, 203, 255), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(71, 60, 89), rgb(229, 203, 255));
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 0.1px;
+  border-radius: 50%;
+  animation: 8s shiner ease-in infinite;
+}
+.header .navbar .nav-left .logo-wrapper::before {
+  filter: blur(0.5rem);
+}
+
+.title-wrapper {
+  position: relative;
+  border-radius: 0.3125rem;
+  background: linear-gradient(50deg, rgb(41, 55, 73) 10%, rgb(46, 61, 65) 100%);
+}
+.title-wrapper::after, .title-wrapper::before {
+  content: "";
+  position: absolute;
+  background-image: conic-gradient(from var(--angle), transparent 90%, rgb(229, 203, 255));
+  border-radius: 0.3125rem;
+  width: 101%;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 0.7rem;
+  animation: 8s border linear infinite;
+}
+.title-wrapper::before {
+  filter: blur(1.5rem);
+}
+
+@keyframes shiner {
+  0% {
+    --angle: 330deg;
+  }
+  97% {
+    --angle: 330deg;
+  }
+  100% {
+    --angle: 480deg;
+  }
+}
+@keyframes border {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+h1 {
+  font-family: "Bruno Ace";
+  text-transform: uppercase;
+  color: rgb(234, 224, 217);
+  font-size: 1rem;
+  font-weight: 800;
+}
+h1 span {
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-family: "Archivo Narrow";
+  color: rgb(229, 203, 255);
+  font-size: 1rem;
+  font-weight: 300;
+}
+h2 span {
+  color: rgb(229, 203, 255);
+  padding-left: 1px;
+}
+
+h3 {
+  max-width: 80%;
+  font-family: "Druk Wide Bold Bold";
+  text-transform: uppercase;
+  color: rgb(41, 55, 73);
+  font-size: 2rem;
+  transform: matrix(1, -0.3, 1, 0.95, 0, 1) scale(1);
+  text-shadow: -5px -1px 4px rgb(229, 203, 255);
+  transition: all 0.4s ease;
+}
+h3:hover {
+  transform: matrix(1, -0.3, 1, 1.55, 0, 0.5) scale(1.1);
+  color: rgb(46, 61, 65);
+  cursor: pointer;
+}
+
+.hero-text {
+  font-family: "Source Sans 3";
+  letter-spacing: 0.2rem;
+  color: rgb(46, 61, 65);
+  margin: 2.8rem 0.3125rem 2rem 0;
+  padding: 1rem;
+  background-color: rgb(234, 224, 217);
+}
+.hero-text a {
+  text-decoration: none;
+  color: rgb(46, 61, 65);
+}
+.hero-text.hero-text .locked {
+  text-decoration: line-through;
+}
+
+.global-container {
+  max-width: 450px;
+  height: 200vh;
+  margin: 0 auto;
+  background-color: rgb(234, 224, 217);
+}
+
+.header {
+  position: relative;
+  height: 10rem;
+}
+.header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.hero {
+  padding-left: 1rem;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
